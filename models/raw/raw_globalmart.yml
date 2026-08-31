@@ -12,6 +12,12 @@ models:
       - name: orderid
         tests:
           - not_null
+      - name: customerid
+        tests:
+          - relationships:
+              arguments:
+                to: ref('raw_customers')
+                field: customerid
       - name: shipmode
         tests:
           - accepted_values:
